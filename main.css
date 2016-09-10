@@ -1,7 +1,5 @@
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
-  width: 100%;
-  height: 100%;
   margin: 0;
   font-size: 14px;
   line-height: 1.42857143;
@@ -20,6 +18,7 @@ nav {
   border-top-width: 0;
   border-left-width:0;
   border-right-width: 0; 
+  z-index: 100;
 }
 
 nav > div > h3 {
@@ -51,7 +50,7 @@ nav > div > div > p {
   padding: 15px;
   line-height: 20px;
   background-color: transparent;
-  position: relative;
+  /*position: relative;*/
   margin: 0;
 }
 
@@ -62,24 +61,33 @@ nav > div > div > p:hover {
 
 header {
   background-image:url(./img/header.jpg); 
-  background-position: center;
-  background-attachment: fixed;
-  padding-bottom: 30px;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
 }
 
-header > h1 {
+#header-container {
+  height: 380px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#header-container > h1 {
   min-width: 768px;
   max-width: 1000px;
   text-align: center;
   margin: 0 auto;
-  padding-top: .55em;
   font-size: 65px;
   font-weight: 700;
   line-height: 1.1;
   color: white;
 }
 
-header > hr {
+#header-container > hr {
   border-color: #F05F40;
   border-width: 3px;
   max-width: 50px;
@@ -87,9 +95,10 @@ header > hr {
   border-left-width:0;
   border-right-width: 0;
   margin:30px auto;
+  border-radius: 30px;
 }
 
-header > p {
+#header-container > p {
   font-size: 18px;
   max-width: 65%;
   margin: auto;
@@ -99,11 +108,11 @@ header > p {
   text-align: center;
 }
 
-header > div {
+#header-container > div {
   text-align: center;
 }
 
-header > div > a {
+#header-container > div > a {
   display: inline-block;
   padding: 15px 30px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -117,7 +126,7 @@ header > div > a {
   text-decoration: none;  /*该属性用来去掉锚点的下划线*/
 }
 
-header > div > a:hover {
+#header-container > div > a:hover {
   cursor: pointer;
   color: white;
   background-color: #ee4b28;
@@ -150,7 +159,8 @@ header > div > a:hover {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 3px solid #eee;
+  border-radius: 30px;
 }
 
 .container > p {
@@ -200,7 +210,8 @@ header > div > a:hover {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #F05F40;
+  border-top: 3px solid #F05F40;
+  border-radius: 30px;
 }
 
 #services > div > div {
@@ -237,9 +248,44 @@ header > div > a:hover {
   text-align: center;
 }
 
-#portfolio > div >img {
-  width: 33%;
-  float: left;
+#portfolio {
+  font-size: 0;
+}
+
+#portfolio > div {
+  width: 33.33333333%;
+  display: inline-block;
+  position: relative;
+}
+
+#portfolio > div > img {
+  width: 100%;
+}
+
+#portfolio > div:hover > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(240,95,64,0.9);
+  text-align: center;
+  color: #FFF;
+}
+
+#portfolio > div:hover > div > div {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#portfolio > div:hover > div > div > p:first-child {
+  color: #F9D1C8;
 }
 
 #download {
@@ -293,7 +339,8 @@ footer > hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #F05F40;
+  border-top: 3px solid #F05F40;
+  border-radius: 30px;
 }
 
 footer > p {
